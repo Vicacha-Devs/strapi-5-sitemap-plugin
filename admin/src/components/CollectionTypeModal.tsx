@@ -182,7 +182,7 @@ export default function CollectionTypeModal({
 		if (type) {
 			const getAllowedFields = async () => {
 				const { data } = await get(`/${PLUGIN_ID}/admin-allowed-fields?type=${type}`);
-				setPossibleThumbnailFields(data.allowedFields);
+				setPossibleThumbnailFields(data.mediaFields ?? []);
 
 				setPatternHint(data.allowedFields.map((field: string) => `[${field}]`).join(', '));
 				if (pattern === '') {
