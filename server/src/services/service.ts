@@ -119,7 +119,7 @@ const service = ({strapi}: { strapi: Core.Strapi }) => ({
 				}
 
 				const entries = await strapi
-					.documents(contentTypeUid)
+					.documents(contentTypeUid as any)
 					.findMany({
 						locale: sitemapEntry.langcode === '-' ? undefined : sitemapEntry.langcode,
 						status: 'published',

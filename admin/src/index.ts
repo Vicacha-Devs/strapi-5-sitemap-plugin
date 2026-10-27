@@ -19,10 +19,8 @@ export default {
             defaultMessage: 'Configuration'
           },
           id: 'sitemap-settings',
-          to: `/settings/${PLUGIN_ID}`,
-          Component: async () => {
-            return import('./pages/Settings');
-          },
+          to: PLUGIN_ID,
+          Component: () => import('./pages/Settings'),
           permissions: [{ action: `plugin::${PLUGIN_ID}.settings.read`, subject: null }],
         },
       ]
